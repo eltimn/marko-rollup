@@ -1,7 +1,44 @@
 class {
     onCreate() {
         this.state = {
-            mounted: false
+            mounted: false,
+            items: [
+                {
+                  name: 'vehicles',
+                  subitems: [
+                    {
+                      name: 'cars',
+                      subitems: [
+                        {
+                          name: 'elantra'
+                        }
+                      ]
+                    },
+                    {
+                      name: 'trucks',
+                      subitems: [
+                        {
+                          name: 'f150'
+                        },
+                        {
+                          name: 'tacoma'
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  name: 'foods',
+                  subitems: [
+                    {
+                      name: 'pizza'
+                    },
+                    {
+                      name: 'wings'
+                    }
+                  ]
+                }
+              ]
         };
     }
     onMount() {
@@ -15,4 +52,5 @@ class {
     </p>
 
     <click-count/>
+    <tree items=state.items />
 </div>
